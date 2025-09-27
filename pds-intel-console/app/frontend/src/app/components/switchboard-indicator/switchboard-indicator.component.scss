@@ -1,0 +1,43 @@
+.switchboard {
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+.lamp {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.lamp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lamp.active {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.lamp.active::after {
+  opacity: 0.65;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+  }
+}

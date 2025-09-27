@@ -1,0 +1,26 @@
+<div class="card chat-pane">
+  <div class="chat-log">
+    <div *ngFor="let message of messages()" class="message" [class.user]="message.role === 'user'">
+      <div class="meta">
+        <span class="role">{{ message.role === 'user' ? 'You' : 'Assistant' }}</span>
+        <span *ngIf="message.source" class="badge">{{ message.source }}</span>
+      </div>
+      <div class="content">
+        <p>{{ message.content }}</p>
+        <app-chart-inline *ngIf="message.chartConfig" [config]="message.chartConfig"></app-chart-inline>
+      </div>
+    </div>
+  </div>
+  <div class="composer">
+    <textarea
+      #promptInput
+      [ngModel]="prompt()"
+      (ngModelChange)="prompt.set($event)"
+      placeholder="Type a prompt or use / for commands"
+    ></textarea>
+    <button type="button" (click)="sendPrompt()">Send</button>
+    <div class="command-palette" *ngIf="commandPaletteVisible()">
+      <div class="command" *ngFor="let suggestion of suggestions()">{{ suggestion }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="card context-deck">
+  <h2>Workspace Context</h2>
+  <div class="deck-grid">
+    <ng-container *ngFor="let card of _cards()">
+      <app-chart-card *ngIf="card.type === 'chart'" [card]="card"></app-chart-card>
+      <div *ngIf="card.type !== 'chart'" class="deck-card">
+        <header>
+          <h3>{{ card.title }}</h3>
+          <span class="badge">{{ card.type }}</span>
+        </header>
+        <p>{{ card.description }}</p>
+        <div class="actions" *ngIf="card.actions?.length">
+          <button type="button" *ngFor="let action of card.actions">{{ action }}</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

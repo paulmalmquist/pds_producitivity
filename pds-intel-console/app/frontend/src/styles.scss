@@ -1,0 +1,80 @@
+:root {
+  --jll-red: #da291c;
+  --jll-gray: #f4f4f4;
+  --jll-dark: #2b2b2b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #ffffff;
+  color: var(--jll-dark);
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--jll-red);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+main {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: var(--jll-gray);
+}
+
+footer {
+  background: #d9d9d9;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  height: calc(100vh - 160px);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.context-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: #ececec;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
