@@ -1,0 +1,12 @@
+<div class="chart-card">
+  <header>
+    <h3>{{ card.title }}</h3>
+    <div class="actions">
+      <button type="button" (click)="changeType.emit()">Change Type</button>
+      <button type="button" (click)="openTableau.emit()">Open in Tableau</button>
+      <button type="button" (click)="createJira.emit()">Create Jira Task</button>
+      <button type="button" (click)="pin.emit()">Pin</button>
+    </div>
+  </header>
+  <app-chart-inline [config]="card.chartConfig"></app-chart-inline>
+</div>

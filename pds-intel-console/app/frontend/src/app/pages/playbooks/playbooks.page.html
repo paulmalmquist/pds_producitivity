@@ -1,0 +1,9 @@
+<div class="card playbooks">
+  <h2>Playbooks</h2>
+  <div class="playbook" *ngFor="let playbook of playbooks()">
+    <h3>{{ playbook.name }}</h3>
+    <ol>
+      <li *ngFor="let step of playbook.steps">{{ step }}</li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+.chat-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.message {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message.user {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.content p {
+  margin: 0;
+}
+
+.composer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid #d0d0d0;
+  font: inherit;
+}
+
+button {
+  align-self: flex-end;
+  background: var(--jll-red);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.command-palette {
+  background: #1f1f1f;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: grid;
+  gap: 0.5rem;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.command {
+  font-size: 0.9rem;
+}
