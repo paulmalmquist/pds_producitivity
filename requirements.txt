@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+httpx
+matplotlib
+plotly
+kaleido
+pytest
+python-dotenv
+databricks-sql-connector
